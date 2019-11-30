@@ -1,3 +1,1 @@
-# React UT demo
-
-# react-ut-jest-demo
+# React ut jest demo
