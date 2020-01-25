@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1575118569457" clover="3.2.0">
-  <project timestamp="1575118569458" name="All files">
-    <metrics statements="47" coveredstatements="18" conditionals="15" coveredconditionals="2" methods="21" coveredmethods="2" elements="83" coveredelements="22" complexity="0" loc="47" ncloc="47" packages="5" files="5" classes="5">
+<coverage generated="1579920589942" clover="3.2.0">
+  <project timestamp="1579920589943" name="All files">
+    <metrics statements="47" coveredstatements="19" conditionals="15" coveredconditionals="2" methods="21" coveredmethods="3" elements="83" coveredelements="24" complexity="0" loc="47" ncloc="47" packages="5" files="5" classes="5">
       <package name="Containers.Counter">
-        <metrics statements="5" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <metrics statements="5" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="1"/>
         <file name="Counter.jsx" path="D:\side-project\react-ut-demo\src\Containers\Counter\Counter.jsx">
-          <metrics statements="5" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+          <metrics statements="5" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="1"/>
           <line num="14" count="0" type="stmt"/>
           <line num="18" count="0" type="stmt"/>
           <line num="28" count="1" type="stmt"/>
-          <line num="34" count="0" type="stmt"/>
+          <line num="34" count="2" type="stmt"/>
           <line num="37" count="0" type="stmt"/>
         </file>
       </package>

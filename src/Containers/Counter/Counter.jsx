@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {CounterRedux} from  '../../Redux/Modules';
 
-class Counter extends Component {
+export class Counter extends Component {
 
     state = {
         count: 0
