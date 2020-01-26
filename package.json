@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack -p",
     "clean": "rimraf dist/*",
-    "test": "jest --coverage",
+    "test": "jest --coverage ./jest.config.json",
     "dev": "webpack-dev-server --devtool eval --progress --watch --hot --mode production",
     "prd": "npm run clean && webpack --mode production"
   },
@@ -44,6 +44,7 @@
     "css-loader": "^1.0.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
+    "enzyme-to-json": "^3.4.3",
     "eslint": "^5.5.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-loader": "^2.1.0",
