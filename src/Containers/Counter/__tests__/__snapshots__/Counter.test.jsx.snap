@@ -1,5 +1,49 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Counter two testing by Jest should created counter two 1`] = `
+<div>
+  <span>
+    <p />
+  </span>
+</div>
+`;
+
+exports[`Counter two testing by Jest snapshot renders 1`] = `
+<div>
+  <span>
+    <p />
+  </span>
+</div>
+`;
+
+exports[`Counter two testing should created counter two 1`] = `
+<span>
+  <p />
+</span>
+`;
+
+exports[`Counter two testing snapshot renders 1`] = `
+<span>
+  <p>
+    1
+  </p>
+</span>
+`;
+
+exports[`CounterTwo should created counter two 1`] = `
+<span>
+  <p />
+</span>
+`;
+
+exports[`CounterTwo snapshot renders 1`] = `
+<span>
+  <p>
+    1
+  </p>
+</span>
+`;
+
 exports[`testing Counter should be possible to activate button with Spacebar 1`] = `
 ReactWrapper {
   Symbol(enzyme.__renderer__): Object {

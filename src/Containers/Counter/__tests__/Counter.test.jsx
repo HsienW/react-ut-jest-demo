@@ -1,8 +1,8 @@
 import React from 'react';
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import {Counter} from '../Counter';
-// import renderer from 'react-test-renderer';
+import {Counter, CounterTwo, CounterThree} from '../Counter';
+import renderer from 'react-test-renderer';
 // import {CounterRedux} from '../../../Redux/Modules';
 // import configureStore from 'redux-mock-store';
 
@@ -20,12 +20,56 @@ Enzyme.configure({adapter: new Adapter()});
 //     });
 // });
 
-describe('testing Counter', () => {
-
-    it('should created counter', () => {
-        const wrapper = Enzyme.shallow(<Counter/>);
-        expect(wrapper).toMatchSnapshot();
+describe('Counter two testing by Jest', () => {
+    test('should created counter two', () => {
+        const component = renderer.create(<CounterTwo/>);
+        let tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
     });
+});
+
+describe('Counter two testing by Jest', () => {
+    test('snapshot renders', () => {
+        const component = renderer.create(<CounterTwo counter={1}/>);
+        let tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+    });
+});
+
+describe('Counter two testing by Enzyme', () => {
+
+    it('should created counter two renders', () => {
+        const wrapper = Enzyme.mount(<CounterTwo />);
+        expect(wrapper.find(CounterTwo).length).toEqual(1);
+    });
+
+    it('should passes all props to counter two', () => {
+        const wrapper = Enzyme.mount(<CounterTwo />);
+        const counterWrapper = wrapper.find(CounterThree);
+        expect(counterWrapper.find('p').text()).toEqual('8');
+    });
+
+    it('increments the counter', () => {
+        const wrapper = Enzyme.mount(<CounterTwo />);
+        wrapper.find('button').at(0).simulate('click');
+        const counterWrapper = wrapper.find(Counter);
+        expect(counterWrapper.find('p').text()).toBe('1');
+    });
+
+    it('decrements the counter', () => {
+        const wrapper = Enzyme.mount(<CounterTwo />);
+        wrapper.find('button').at(1).simulate('click');
+        const counterWrapper = wrapper.find(Counter);
+        expect(counterWrapper.find('p').text()).toBe('-1');
+    });
+});
+
+describe('Counter testing', () => {
+
+    // it('should created counter', () => {
+    //     const wrapper = Enzyme.shallow(<Counter/>);
+    //     expect(wrapper).toMatchSnapshot();
+    // });
 
     // it('should render banner text correctly with given strings', () => {
     //     const strings = ['one', 'two'];

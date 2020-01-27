@@ -1,8 +1,20 @@
 import React, {Component} from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 // import {connect} from 'react-redux';
 // import {bindActionCreators} from 'redux';
 // import {CounterRedux} from  '../../Redux/Modules';
+
+export const CounterTwo = ({counterTwo}) => (
+    <div>
+        <CounterThree counterThree={counterTwo} />
+    </div>
+);
+
+export const CounterThree = ({counterThree}) => (
+    <span>
+        <p>{counterThree}</p>
+    </span>
+);
 
 export class Counter extends Component {
 
@@ -36,7 +48,7 @@ export class Counter extends Component {
         return (
             <div>
                 <p>{`Count: ${this.state.count}`}</p>
-                <br />
+                <br/>
                 <button className="add" type="button" onClick={this.addCount}>+ 1</button>
                 <button className="decrement" onClick={this.decrement}>- 1</button>
             </div>
@@ -44,9 +56,10 @@ export class Counter extends Component {
     }
 }
 
-// Counter.propTypes = {
-//     CounterActionsCreator: PropTypes.object.isRequired,
-// };
+CounterTwo.propTypes = {
+    counterTwo: PropTypes.number,
+    counterThree: PropTypes.number,
+};
 //
 // export default connect(
 //     (state) => {
