@@ -14,6 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "@types/gapi.client": "^1.0.1",
+    "axios": "^0.19.2",
     "gapi-client": "0.0.3",
     "history": "^4.7.2",
     "prop-types": "^15.6.2",
@@ -29,6 +30,7 @@
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
+    "async-wait-until": "^1.2.4",
     "babel-core": "^6.26.3",
     "babel-eslint": "^9.0.0",
     "babel-loader": "^7.1.5",
@@ -56,6 +58,7 @@
     "html-webpack-plugin": "^3.2.0",
     "jest": "^23.6.0",
     "mini-css-extract-plugin": "^0.4.5",
+    "nock": "^11.7.2",
     "node-sass": "^4.9.3",
     "postcss-loader": "^3.0.0",
     "react-test-renderer": "^16.4.2",

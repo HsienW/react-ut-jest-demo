@@ -1,8 +1,10 @@
 import React from 'react';
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import {Counter, CounterTwo, CounterThree} from '../Counter';
-import renderer from 'react-test-renderer';
+import nock from 'nock';
+import waitUntil from 'async-wait-until';
+import {Counter, CounterTwo, CounterThree, CounterFour} from '../Counter';
+// import renderer from 'react-test-renderer';
 // import {CounterRedux} from '../../../Redux/Modules';
 // import configureStore from 'redux-mock-store';
 
@@ -20,48 +22,131 @@ Enzyme.configure({adapter: new Adapter()});
 //     });
 // });
 
-describe('Counter two testing by Jest', () => {
-    test('should created counter two', () => {
-        const component = renderer.create(<CounterTwo/>);
-        let tree = component.toJSON();
-        expect(tree).toMatchSnapshot();
-    });
-});
+// describe('Counter two testing by Jest', () => {
+//     test('should created counter two', () => {
+//         const component = renderer.create(<CounterTwo/>);
+//         let tree = component.toJSON();
+//         expect(tree).toMatchSnapshot();
+//     });
+// });
 
-describe('Counter two testing by Jest', () => {
-    test('snapshot renders', () => {
-        const component = renderer.create(<CounterTwo counter={1}/>);
-        let tree = component.toJSON();
-        expect(tree).toMatchSnapshot();
-    });
-});
+// describe('Counter two testing by Jest', () => {
+//     test('snapshot renders', () => {
+//         const component = renderer.create(<CounterTwo/>);
+//         let tree = component.toJSON();
+//         expect(tree).toMatchSnapshot();
+//     });
+// });
 
 describe('Counter two testing by Enzyme', () => {
 
     it('should created counter two renders', () => {
-        const wrapper = Enzyme.mount(<CounterTwo />);
+        const wrapper = Enzyme.mount(<CounterTwo/>);
         expect(wrapper.find(CounterTwo).length).toEqual(1);
     });
 
-    it('should passes all props to counter two', () => {
-        const wrapper = Enzyme.mount(<CounterTwo />);
-        const counterWrapper = wrapper.find(CounterThree);
-        expect(counterWrapper.find('p').text()).toEqual('8');
-    });
+    // it('should passes all props to counter two', () => {
+    //     const wrapper = Enzyme.mount(<CounterTwo />);
+    //     const counterWrapper = wrapper.find(CounterThree);
+    //     expect(counterWrapper.find('p').text()).toEqual('8');
+    // });
 
     it('increments the counter', () => {
-        const wrapper = Enzyme.mount(<CounterTwo />);
-        wrapper.find('button').at(0).simulate('click');
-        const counterWrapper = wrapper.find(Counter);
-        expect(counterWrapper.find('p').text()).toBe('1');
+        const wrapper = Enzyme.mount(<CounterTwo/>);
+        const counterWrapper = wrapper.find(CounterTwo);
+        wrapper.find('button.increment').simulate('click');
+        expect(counterWrapper.find('p').text()).toEqual('1');
     });
 
     it('decrements the counter', () => {
-        const wrapper = Enzyme.mount(<CounterTwo />);
-        wrapper.find('button').at(1).simulate('click');
-        const counterWrapper = wrapper.find(Counter);
-        expect(counterWrapper.find('p').text()).toBe('-1');
+        const wrapper = Enzyme.mount(<CounterTwo/>);
+        const counterWrapper = wrapper.find(CounterTwo);
+        wrapper.find('button.decrement').simulate('click');
+        expect(counterWrapper.find('p').text()).toEqual('-1');
     });
+});
+
+// describe('Counter three testing call api is true', () => {
+//     beforeAll(() => {
+//         nock('http://localhost:8888/#')
+//             .get('/counter-three')
+//             .reply(200, {
+//                 name: 'joe',
+//                 age: 18
+//             });
+//     });
+//
+//     afterAll(() => {
+//         nock.cleanAll();
+//     });
+//
+//     it('case: expect component did mount will trigger re-render', async () => {
+//         const wrapper = Enzyme.mount(<CounterThree/>);
+//
+//         await waitUntil(() => wrapper.state('name') === 'joe');
+//         await waitUntil(() => wrapper.state('age') === 18);
+//
+//         expect(wrapper.find('p.name').text()).toBe('joe');
+//         expect(wrapper.find('p.age').text()).toBe('18');
+//     });
+// });
+
+describe('Counter three testing call api is false', () => {
+    beforeAll(() => {
+        nock('http://localhost:8888/#')
+            .get('/counter-three')
+            .reply(400, {});
+    });
+
+    afterAll(() => {
+        nock.cleanAll();
+    });
+
+    it('case: expect component did mount will trigger re-render', async () => {
+        const wrapper = Enzyme.mount(<CounterThree/>);
+
+        await waitUntil(() => true);
+
+        expect(wrapper.find('p.name').text()).toBe('');
+        expect(wrapper.find('p.age').text()).toBe('');
+    });
+});
+
+it('Counter four testing input & click call api', async () => {
+
+    beforeAll(() => {
+        nock('http://localhost:8888/#')
+            .post('/counter-four')
+            .reply(200, () => {
+                return {};
+            });
+    });
+
+    afterAll(() => {
+        nock.cleanAll();
+    });
+
+
+    const wrapper = Enzyme.mount(<CounterFour/>);
+    const input = wrapper.find('input.input');
+    const button = wrapper.find('button.submit');
+
+    expect(input.exists());
+    expect(button.exists());
+
+    input.simulate('change', {
+        target: {
+            value: 'joe'
+        }
+    });
+
+    expect(wrapper.state('value')).toBe('joe');
+
+    button.simulate('click');
+
+    await waitUntil(() => true);
+
+    expect(wrapper.state('value')).toBe('');
 });
 
 describe('Counter testing', () => {
@@ -118,28 +203,3 @@ describe('Counter testing', () => {
     // });
 
 });
-
-// describe('Addition', () => {
-//     it('knows that 2 and 2 make 4', () => {
-//         expect(2 + 2).toBe(4);
-//     });
-// });
-
-// describe('<Counter>', () => {
-//
-//     const store = mockStore({count: 0});
-//
-//     const counter = mount(<Counter store={store} />);
-//
-//     test('test actions', () => {
-//         counter.find('button').simulate('click');
-//
-//         // const expectAction = {
-//         //     type: CounterRedux.CounterActions.addCounter,
-//         //     payload: {addQuantity: 1},
-//         // };
-//         expect(store.getActions().length).toBe(1);
-//
-//         // expect(counter.addCount()).toEqual(expectAction);
-//     });
-// });
