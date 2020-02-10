@@ -4,8 +4,7 @@ import ReduxStore from './Redux/ReduxStore';
 import {render} from 'react-dom';
 import {Provider} from 'react-redux';
 import {HashRouter, Router, Switch, Route} from 'react-router-dom';
-import {Counter, CounterThree, HelloPerson}from './Containers';
-import {CounterFour} from './Containers/Counter/Counter';
+import {App} from './Containers/App/App';
 
 const history = createHistory();
 
@@ -15,10 +14,7 @@ render((
             <Router history={history}>
                 <div style={{width: '100%', height: '100%'}}>
                     <Switch>
-                        <Route path='/counter' component={Counter}/>
-                        <Route path='/counter-three' component={CounterThree}/>
-                        <Route path='/counter-four' component={CounterFour}/>
-                        <Route path='/person' component={HelloPerson}/>
+                        <Route path='/app' component={App}/>
                     </Switch>
                 </div>
             </Router>
