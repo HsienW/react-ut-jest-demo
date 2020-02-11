@@ -49,6 +49,9 @@ module.exports = {
             }
         }
     },
+    devServer: {
+        'port': 8888
+    },
     plugins: [
         new HtmlWebpackPlugin({
             title: 'react UT',
