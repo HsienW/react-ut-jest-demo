@@ -1,41 +1,35 @@
 import React from 'react';
 import Enzyme from 'enzyme';
+import {Form} from '../Form';
 import Adapter from 'enzyme-adapter-react-16';
-import {Counter} from '../Counter';
-
 
 Enzyme.configure({adapter: new Adapter()});
 
-describe('Counter component', () => {
+describe('Form component', () => {
     it('should created', () => {
-        const component = Enzyme.shallow(<Counter/>);
+        const component = Enzyme.shallow(<Form/>);
         expect(component).toMatchSnapshot();
     });
 
     it('should render component', () => {
-        const component = Enzyme.mount(<Counter/>);
-        expect(component.find('p').length).toEqual(1);
-        expect(component.find('.increment').length).toEqual(1);
-        expect(component.find('.decrement').length).toEqual(1);
+        const component = Enzyme.mount(<Form/>);
+        expect(component.find('form').length).toEqual(1);
+        expect(component.find('p').length).toEqual(3);
+        expect(component.find('input#account').length).toEqual(1);
+        expect(component.find('input#password').length).toEqual(1);
     });
 });
 
-describe('increment function testing', () => {
-    const component = Enzyme.mount(<Counter/>);
-    const counterWrapper = component.find(Counter);
+describe('handleSubmit() function testing', () => {
+    const component = Enzyme.mount(<Form/>);
+    const form = component.find(Form);
 
-    it('count value should equal 1', () => {
-        counterWrapper.find('button.increment').simulate('click');
-        expect(counterWrapper.find('p').text()).toEqual('1');
-    });
-});
-
-describe('decrement function testing', () => {
-    const component = Enzyme.mount(<Counter/>);
-    const counterWrapper = component.find(Counter);
-
-    it('count value should equal -1', () => {
-        component.find('button.decrement').simulate('click');
-        expect(counterWrapper.find('p').text()).toEqual('-1');
+    it('from data should equal right', () => {
+        form.find('input#account').simulate('change', '123');
+        form.find('input#password').simulate('change', '456');
+        form.find('input#password').simulate('click');
+        expect(form.find('h2#message').text()).toEqual('Sending...');
+        expect(form.find('h2#account').text()).toEqual('123');
+        expect(form.find('h2#password').text()).toEqual('456');
     });
 });

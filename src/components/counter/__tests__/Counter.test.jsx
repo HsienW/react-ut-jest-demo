@@ -20,22 +20,22 @@ describe('Counter component', () => {
     });
 });
 
-describe('increment function testing', () => {
+describe('increment() function testing', () => {
     const component = Enzyme.mount(<Counter/>);
-    const counterWrapper = component.find(Counter);
+    const counter = component.find(Counter);
 
     it('count value should equal 1', () => {
-        counterWrapper.find('button.increment').simulate('click');
-        expect(counterWrapper.find('p').text()).toEqual('1');
+        counter.find('button.increment').simulate('click');
+        expect(counter.find('p').text()).toEqual('1');
     });
 });
 
-describe('decrement function testing', () => {
+describe('decrement() function testing', () => {
     const component = Enzyme.mount(<Counter/>);
-    const counterWrapper = component.find(Counter);
+    const counter = component.find(Counter);
 
     it('count value should equal -1', () => {
         component.find('button.decrement').simulate('click');
-        expect(counterWrapper.find('p').text()).toEqual('-1');
+        expect(counter.find('p').text()).toEqual('-1');
     });
 });

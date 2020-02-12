@@ -8,22 +8,33 @@ export class Form extends Component {
         this.account = React.createRef();
         this.password = React.createRef();
         this.state = {
-            message: ''
+            message: '',
+            account: '',
+            password: ''
         };
     }
 
     handleSubmit = (event) => {
         event.preventDefault();
-        this.setState({message: 'Sending...'});
+        this.setState({
+            message: 'Sending...',
+            account: this.account.current.value,
+            password: this.password.current.value
+        });
     };
 
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
-                <div>Account: <input id="account " type="text" ref={this.account} /></div>
+                <div>Account: <input id="account " type="text" ref={this.account}/></div>
+                <p/>
                 <div>Password: <input id="password" type="text" ref={this.password}/></div>
+                <p/>
                 <input type="submit"/>
-                <h2>{this.state.message}</h2>
+                <p/>
+                <h2 id="message">{this.state.message}</h2>
+                <h2 id="show-account">{this.state.account}</h2>
+                <h2 id="show-password">{this.state.password}</h2>
             </form>
         );
     }

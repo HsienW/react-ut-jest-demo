@@ -1,0 +1,424 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form component should created 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Form />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div>
+          Account: 
+          <input
+            id="account "
+            type="text"
+          />
+        </div>,
+        <p />,
+        <div>
+          Password: 
+          <input
+            id="password"
+            type="text"
+          />
+        </div>,
+        <p />,
+        <input
+          type="submit"
+        />,
+        <p />,
+        <h2
+          id="message"
+        >
+          
+        </h2>,
+        <h2
+          id="show-account"
+        >
+          
+        </h2>,
+        <h2
+          id="show-password"
+        >
+          
+        </h2>,
+      ],
+      "onSubmit": [Function],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Account: ",
+            <input
+              id="account "
+              type="text"
+            />,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          "Account: ",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "id": "account ",
+              "type": "text",
+            },
+            "ref": Object {
+              "current": null,
+            },
+            "rendered": null,
+            "type": "input",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Password: ",
+            <input
+              id="password"
+              type="text"
+            />,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          "Password: ",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "id": "password",
+              "type": "text",
+            },
+            "ref": Object {
+              "current": null,
+            },
+            "rendered": null,
+            "type": "input",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "type": "submit",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "",
+          "id": "message",
+        },
+        "ref": null,
+        "rendered": "",
+        "type": "h2",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "",
+          "id": "show-account",
+        },
+        "ref": null,
+        "rendered": "",
+        "type": "h2",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "",
+          "id": "show-password",
+        },
+        "ref": null,
+        "rendered": "",
+        "type": "h2",
+      },
+    ],
+    "type": "form",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div>
+            Account: 
+            <input
+              id="account "
+              type="text"
+            />
+          </div>,
+          <p />,
+          <div>
+            Password: 
+            <input
+              id="password"
+              type="text"
+            />
+          </div>,
+          <p />,
+          <input
+            type="submit"
+          />,
+          <p />,
+          <h2
+            id="message"
+          >
+            
+          </h2>,
+          <h2
+            id="show-account"
+          >
+            
+          </h2>,
+          <h2
+            id="show-password"
+          >
+            
+          </h2>,
+        ],
+        "onSubmit": [Function],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Account: ",
+              <input
+                id="account "
+                type="text"
+              />,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "Account: ",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "id": "account ",
+                "type": "text",
+              },
+              "ref": Object {
+                "current": null,
+              },
+              "rendered": null,
+              "type": "input",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Password: ",
+              <input
+                id="password"
+                type="text"
+              />,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "Password: ",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "id": "password",
+                "type": "text",
+              },
+              "ref": Object {
+                "current": null,
+              },
+              "rendered": null,
+              "type": "input",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "type": "submit",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "",
+            "id": "message",
+          },
+          "ref": null,
+          "rendered": "",
+          "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "",
+            "id": "show-account",
+          },
+          "ref": null,
+          "rendered": "",
+          "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "",
+            "id": "show-password",
+          },
+          "ref": null,
+          "rendered": "",
+          "type": "h2",
+        },
+      ],
+      "type": "form",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": false,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": true,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    Symbol(enzyme.__providerValues__): undefined,
+  },
+  Symbol(enzyme.__providerValues__): Map {},
+  Symbol(enzyme.__childContext__): null,
+}
+`;
