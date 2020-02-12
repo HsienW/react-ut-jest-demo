@@ -1,5 +1,5 @@
 TN:
-SF:D:\side-project\react-ut-demo\src\Components\Counter\Counter.jsx
+SF:D:\side-project\react-ut-jest-demo\src\Components\Counter\Counter.jsx
 FN:13,(anonymous_0)
 FN:19,(anonymous_1)
 FN:25,(anonymous_2)
@@ -24,7 +24,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:D:\side-project\react-ut-demo\src\Containers\App\App.jsx
+SF:D:\side-project\react-ut-jest-demo\src\Containers\App\App.jsx
 FN:7,(anonymous_0)
 FNF:1
 FNH:1
@@ -36,7 +36,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:D:\side-project\react-ut-demo\src\Redux\Modules\CounterRedux.js
+SF:D:\side-project\react-ut-jest-demo\src\Redux\Modules\CounterRedux.js
 FN:8,(anonymous_0)
 FN:9,(anonymous_1)
 FN:14,(anonymous_2)
