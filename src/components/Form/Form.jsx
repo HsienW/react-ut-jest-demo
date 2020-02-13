@@ -26,7 +26,7 @@ export class Form extends Component {
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
-                <div>Account: <input id="account " type="text" ref={this.account}/></div>
+                <div>Account: <input id="account" type="text" ref={this.account}/></div>
                 <p/>
                 <div>Password: <input id="password" type="text" ref={this.password}/></div>
                 <p/>

@@ -15,8 +15,8 @@ describe('Form component', () => {
         const component = Enzyme.mount(<Form/>);
         expect(component.find('form').length).toEqual(1);
         expect(component.find('p').length).toEqual(3);
-        expect(component.find('input#account').length).toEqual(1);
-        expect(component.find('input#password').length).toEqual(1);
+        expect(component.find('#account').length).toEqual(1);
+        expect(component.find('#password').length).toEqual(1);
     });
 });
 
@@ -25,11 +25,11 @@ describe('handleSubmit() function testing', () => {
     const form = component.find(Form);
 
     it('from data should equal right', () => {
-        form.find('input#account').simulate('change', '123');
-        form.find('input#password').simulate('change', '456');
+        form.find('input#account').simulate('change', {target: {value: '123'}});
+        form.find('input#password').simulate('change', {target: {value: '456'}});
         form.find('input#password').simulate('click');
         expect(form.find('h2#message').text()).toEqual('Sending...');
-        expect(form.find('h2#account').text()).toEqual('123');
-        expect(form.find('h2#password').text()).toEqual('456');
+        expect(form.find('h2#show-account').text()).toEqual('123');
+        expect(form.find('h2#show-password').text()).toEqual('456');
     });
 });
