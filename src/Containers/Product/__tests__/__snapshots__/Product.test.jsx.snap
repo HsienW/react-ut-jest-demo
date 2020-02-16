@@ -3,7 +3,7 @@
 exports[`App container should created snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <App />,
+  Symbol(enzyme.__unrendered__): <Product />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -20,9 +20,11 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <h1>
-          App
+          Product Page
         </h1>,
-        <Form />,
+        <ProductList
+          listData={Array []}
+        />,
       ],
     },
     "ref": null,
@@ -32,17 +34,19 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "App",
+          "children": "Product Page",
         },
         "ref": null,
-        "rendered": "App",
+        "rendered": "Product Page",
         "type": "h1",
       },
       Object {
         "instance": null,
         "key": undefined,
         "nodeType": "class",
-        "props": Object {},
+        "props": Object {
+          "listData": Array [],
+        },
         "ref": null,
         "rendered": null,
         "type": [Function],
@@ -58,9 +62,11 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <h1>
-            App
+            Product Page
           </h1>,
-          <Form />,
+          <ProductList
+            listData={Array []}
+          />,
         ],
       },
       "ref": null,
@@ -70,17 +76,19 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "App",
+            "children": "Product Page",
           },
           "ref": null,
-          "rendered": "App",
+          "rendered": "Product Page",
           "type": "h1",
         },
         Object {
           "instance": null,
           "key": undefined,
           "nodeType": "class",
-          "props": Object {},
+          "props": Object {
+            "listData": Array [],
+          },
           "ref": null,
           "rendered": null,
           "type": [Function],
@@ -119,10 +127,10 @@ ShallowWrapper {
 }
 `;
 
-exports[`Counter component should created 1`] = `
+exports[`Product container should created snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <App />,
+  Symbol(enzyme.__unrendered__): <Product />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -137,22 +145,40 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <h1>
-        App
-      </h1>,
+      "children": Array [
+        <h1>
+          Product Page
+        </h1>,
+        <ProductList
+          listData={Array []}
+        />,
+      ],
     },
     "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": "App",
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Product Page",
+        },
+        "ref": null,
+        "rendered": "Product Page",
+        "type": "h1",
       },
-      "ref": null,
-      "rendered": "App",
-      "type": "h1",
-    },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "listData": Array [],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
     "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -161,22 +187,40 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": <h1>
-          App
-        </h1>,
+        "children": Array [
+          <h1>
+            Product Page
+          </h1>,
+          <ProductList
+            listData={Array []}
+          />,
+        ],
       },
       "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "App",
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Product Page",
+          },
+          "ref": null,
+          "rendered": "Product Page",
+          "type": "h1",
         },
-        "ref": null,
-        "rendered": "App",
-        "type": "h1",
-      },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "listData": Array [],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
       "type": "div",
     },
   ],
