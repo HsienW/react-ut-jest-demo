@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack -p",
     "clean": "rimraf dist/*",
-    "test": "jest --coverage",
+    "test": "jest --watchAll --verbose",
+    "test-coverage": "jest --watchAll --verbose --coverage",
     "dev": "webpack-dev-server --devtool eval --progress --watch --hot --mode production",
     "prd": "npm run clean && webpack --mode production"
   },
