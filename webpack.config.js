@@ -50,7 +50,7 @@ module.exports = {
         }
     },
     devServer: {
-        'port': 8888
+        'port': 8080
     },
     plugins: [
         new HtmlWebpackPlugin({

@@ -3,7 +3,6 @@ import Enzyme, {shallow, mount} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import {Form} from '../Form';
 
-
 Enzyme.configure({adapter: new Adapter()});
 
 describe('Form component', () => {

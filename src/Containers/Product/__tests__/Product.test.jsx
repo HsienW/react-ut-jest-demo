@@ -6,7 +6,7 @@ import {Product} from '../Product';
 Enzyme.configure({adapter: new Adapter()});
 
 
-describe('App container', () => {
+describe('Product container', () => {
     const wrapper = shallow(<Product/>);
 
     it('should created container', () => {
