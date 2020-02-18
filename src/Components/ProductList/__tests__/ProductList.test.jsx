@@ -1,5 +1,5 @@
 import React from 'react';
-import Enzyme, {shallow} from 'enzyme';
+import Enzyme, {shallow, mount} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import {ProductList} from '../ProductList';
 import {successData} from '../../../Api/ApiSimulation';
@@ -18,8 +18,16 @@ describe('ProductList component', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
-    it('should get props', () => {
-        expect(wrapper.find('li').props().value).toEqual(successData);
-    });
+    // it('should get props', () => {
+    //     expect(wrapper.find('li').props().value).toEqual(successData);
+    // });
 });
 
+describe('should get props', () => {
+    const wrapper  = mount(<ProductList listData={successData}/>);
+    // const spyDidMount = jest.spyOn(ProductList.prototype, 'componentDidMount');
+
+    it('should get props', () => {
+        expect(wrapper.prop('listData')).toEqual(successData);
+    });
+});
