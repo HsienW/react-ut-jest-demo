@@ -19,8 +19,6 @@ export class ProductList extends Component {
 
     render() {
         const {listData} = this.props;
-        console.log('pppppppppppppp');
-        console.log(this.props);
         return (
             <div>
                 <h2>Product-list</h2>
@@ -42,6 +40,10 @@ export class ProductList extends Component {
         );
     }
 }
+
+ProductList.defaultProps = {
+    listData: [],
+};
 
 ProductList.propTypes = {
     listData: PropTypes.array.isRequired
