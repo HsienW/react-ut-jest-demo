@@ -7,8 +7,7 @@ import {ProductList} from '../ProductList';
 Enzyme.configure({adapter: new Adapter()});
 
 describe('ProductList component', () => {
-    const wrapper = shallow(<ProductList listData={() => {
-    }}/>);
+    const wrapper = shallow(<ProductList listData={() => {}}/>);
 
     it('should created component', () => {
         expect(wrapper.exists()).toBe(true);
@@ -48,5 +47,13 @@ describe('should get props', () => {
         // expect(wrapper.find('ul').childAt(0).type()).to.equal('li');
         // expect(wrapper.find('li').childAt(0)).to.equal(props.listData);
         expect(wrapper.find('ul').children()).toHaveLength(1);
+    });
+});
+
+describe('should change search key', () => {
+    it('check search onChange value', () => {
+        const wrapper = mount(<ProductList listData={() => {}}/>);
+        wrapper.find('input').simulate('change', {target: {value: 'apple'}});
+        expect(wrapper.state('searchKey')).toEqual('apple');
     });
 });
