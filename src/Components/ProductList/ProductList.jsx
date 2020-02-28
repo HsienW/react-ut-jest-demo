@@ -18,6 +18,7 @@ export class ProductList extends Component {
     };
 
     render() {
+        const {listData} = this.props;
         return (
             <div>
                 <h2>Product-list</h2>
@@ -26,11 +27,13 @@ export class ProductList extends Component {
                 </form>
                 <ul>
                     {
-                        this.props.listData.map((item) => {
-                            return (
-                                <li key={item.id}>{item.name}</li>
-                            );
-                        })
+                        listData.length !== 0
+                            ? listData.map((item) => {
+                                return (
+                                    <li key={item.id}>{item.name}</li>
+                                );
+                            })
+                            : <div>Loading...</div>
                     }
                 </ul>
             </div>
@@ -38,6 +41,9 @@ export class ProductList extends Component {
     }
 }
 
+ProductList.defaultProps = {
+    listData: [],
+};
 
 ProductList.propTypes = {
     listData: PropTypes.array.isRequired
