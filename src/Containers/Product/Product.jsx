@@ -4,37 +4,52 @@ import {ProductList} from '../../Components/ProductList/ProductList';
 
 // import PropTypes from 'prop-types';
 
-
 export class Product extends Component {
 
     state = {
         getListDataState: '',
-        listData: []
+        originalListData: [],
+        displayListData: []
     };
 
     componentDidMount() {
         ApiSimulation()
             .then((respond) => {
-                console.log('tttttttttttttttttttt');
-                console.log(respond);
                 this.setState({
                     getListDataState: respond.state,
-                    listData: respond.data
+                    originalListData: respond.data,
+                    displayListData: respond.data
                 });
             })
             .catch((error) => {
                 this.setState({
                     getListDataState: error.state,
-                    listData: error.data
+                    originalListData: error.data,
+                    displayListData: error.data
                 });
             });
     }
+
+    doProductSearch = (searchKey) => {
+        if (searchKey === '') {
+            this.setState({displayListData: this.state.originalListData});
+            return;
+        }
+
+        let displayListData = this.state.originalListData.filter((item) => {
+            return item.name === searchKey;
+        });
+        this.setState({displayListData: displayListData});
+    };
 
     render() {
         return (
             <div>
                 <h1>Product Page</h1>
-                <ProductList listData={this.state.listData}/>
+                <ProductList
+                    listData={this.state.displayListData}
+                    doListSearch={this.doProductSearch}
+                />
             </div>
         );
     }
