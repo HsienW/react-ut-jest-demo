@@ -7,11 +7,12 @@ import {ProductList} from '../ProductList';
 Enzyme.configure({adapter: new Adapter()});
 
 
-describe('ProductList component', () => {
-    const wrapper = shallow(<ProductList listData={[]} doListSearch={() => {}}/>);
+describe('ProductList Component', () => {
+    const wrapper = shallow(<ProductList listData={[]} doListSearch={() => {
+    }}/>);
 
     it('should created component', () => {
-        expect(wrapper.exists()).toBe(true);
+        expect(wrapper.exists()).toEqual(true);
     });
 
     it('should created snapshot', () => {
@@ -19,11 +20,12 @@ describe('ProductList component', () => {
     });
 });
 
-describe('ProductList props', () => {
+describe('ProductList Props', () => {
     it('should get default props', () => {
         const props = {
             listData: [],
-            doListSearch: () => {}
+            doListSearch: () => {
+            }
         };
         const wrapper = mount(<ProductList {...props}/>);
         expect(wrapper.prop('listData')).toEqual(props.listData);
@@ -38,16 +40,18 @@ describe('ProductList props', () => {
                     name: 'Apple'
                 },
             ],
-            doListSearch: () => {}
+            doListSearch: () => {
+            }
         };
         const wrapper = mount(<ProductList {...props}/>);
         expect(wrapper.find('ul').children()).toHaveLength(1);
     });
 });
 
-describe('ProductList function - search', () => {
+describe('ProductList Function', () => {
     it('should change search key value', () => {
-        const wrapper = mount(<ProductList listData={[]} doListSearch={() => {}}/>);
+        const wrapper = mount(<ProductList listData={[]} doListSearch={() => {
+        }}/>);
         wrapper.find('input').simulate('change', {target: {value: 'Apple'}});
         expect(wrapper.state('searchKey')).toEqual('Apple');
     });

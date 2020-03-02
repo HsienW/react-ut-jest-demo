@@ -9,7 +9,7 @@ describe('Form component', () => {
     const wrapper = shallow(<Form/>);
 
     it('should created component', () => {
-        expect(wrapper.exists()).toBe(true);
+        expect(wrapper.exists()).toEqual(true);
     });
 
     it('should created snapshot', () => {
