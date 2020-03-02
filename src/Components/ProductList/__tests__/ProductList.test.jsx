@@ -6,30 +6,30 @@ import {ProductList} from '../ProductList';
 
 Enzyme.configure({adapter: new Adapter()});
 
-describe('ProductList component', () => {
-    const wrapper = shallow(<ProductList listData={() => {}}/>);
+
+describe('ProductList Component', () => {
+    const wrapper = shallow(<ProductList listData={[]} doListSearch={() => {
+    }}/>);
 
     it('should created component', () => {
-        expect(wrapper.exists()).toBe(true);
+        expect(wrapper.exists()).toEqual(true);
     });
 
     it('should created snapshot', () => {
         expect(wrapper).toMatchSnapshot();
     });
-
-    // it('should get props', () => {
-    //     expect(wrapper.find('li').props().value).toEqual(successData);
-    // });
 });
 
-describe('should get props', () => {
-    // DateInputComponent = mount(<DateInput {...props} />).find('.datepicker');
-    // const spyDidMount = jest.spyOn(ProductList.prototype, 'componentDidMount');
-
+describe('ProductList Props', () => {
     it('should get default props', () => {
-        const props = {listData: []};
+        const props = {
+            listData: [],
+            doListSearch: () => {
+            }
+        };
         const wrapper = mount(<ProductList {...props}/>);
         expect(wrapper.prop('listData')).toEqual(props.listData);
+        expect(wrapper.prop('doListSearch')).toEqual(props.doListSearch);
     });
 
     it('should get new props', () => {
@@ -39,21 +39,20 @@ describe('should get props', () => {
                     id: 1,
                     name: 'Apple'
                 },
-            ]
+            ],
+            doListSearch: () => {
+            }
         };
         const wrapper = mount(<ProductList {...props}/>);
-        // expect(wrapper.length).to.equal(1);
-        // dateInput = DateComponent.find("input[type='text']");
-        // expect(wrapper.find('ul').childAt(0).type()).to.equal('li');
-        // expect(wrapper.find('li').childAt(0)).to.equal(props.listData);
         expect(wrapper.find('ul').children()).toHaveLength(1);
     });
 });
 
-describe('should change search key', () => {
-    it('check search onChange value', () => {
-        const wrapper = mount(<ProductList listData={() => {}}/>);
-        wrapper.find('input').simulate('change', {target: {value: 'apple'}});
-        expect(wrapper.state('searchKey')).toEqual('apple');
+describe('ProductList Function', () => {
+    it('should change search key value', () => {
+        const wrapper = mount(<ProductList listData={[]} doListSearch={() => {
+        }}/>);
+        wrapper.find('input').simulate('change', {target: {value: 'Apple'}});
+        expect(wrapper.state('searchKey')).toEqual('Apple');
     });
 });

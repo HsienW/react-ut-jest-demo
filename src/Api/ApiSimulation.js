@@ -27,7 +27,7 @@ export const ApiSimulation = () => {
         if (success) {
             setTimeout(() => {
                 resolve(successData);
-            }, 1000);
+            }, 500);
         } else {
             reject(failData);
         }

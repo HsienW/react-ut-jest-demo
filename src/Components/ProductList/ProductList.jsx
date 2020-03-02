@@ -13,8 +13,9 @@ export class ProductList extends Component {
         });
     };
 
-    submit = (event) => {
+    search = () => {
         event.preventDefault();
+        this.props.doListSearch(this.state.searchKey);
     };
 
     render() {
@@ -22,9 +23,8 @@ export class ProductList extends Component {
         return (
             <div>
                 <h2>Product-list</h2>
-                <form onSubmit={this.submit}>
-                    <input type="text" value={this.state.searchKey} onChange={this.changeKey}/>
-                </form>
+                <input type="text" value={this.state.searchKey} onChange={this.changeKey}/>
+                <button onClick={this.search}>Search</button>
                 <ul>
                     {
                         listData.length !== 0
@@ -33,7 +33,7 @@ export class ProductList extends Component {
                                     <li key={item.id}>{item.name}</li>
                                 );
                             })
-                            : <div>Loading...</div>
+                            : <div>No data</div>
                     }
                 </ul>
             </div>
@@ -43,8 +43,10 @@ export class ProductList extends Component {
 
 ProductList.defaultProps = {
     listData: [],
+    doListSearch: () => {}
 };
 
 ProductList.propTypes = {
-    listData: PropTypes.array.isRequired
+    listData: PropTypes.array.isRequired,
+    doListSearch: PropTypes.func.isRequired
 };
