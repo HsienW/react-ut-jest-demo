@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {CounterActions} from '../../Redux/Modules/CounterRedux';
 
 export class Counter extends Component {
 

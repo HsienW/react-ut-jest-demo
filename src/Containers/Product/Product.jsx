@@ -1,8 +1,11 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import {ApiSimulation} from '../../Api/ApiSimulation';
 import {ProductList} from '../../Components/ProductList/ProductList';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+import {ProductRedux} from '../../Redux/Modules/ProductRedux';
 
-// import PropTypes from 'prop-types';
 
 export class Product extends Component {
 
@@ -42,6 +45,10 @@ export class Product extends Component {
         this.setState({displayListData: displayListData});
     };
 
+    dispatchClick = () => {
+        this.props.ProductActionsCreator.productSuccess();
+    };
+
     render() {
         return (
             <div>
@@ -50,10 +57,23 @@ export class Product extends Component {
                     listData={this.state.displayListData}
                     doListSearch={this.doProductSearch}
                 />
+                <button onClick={this.dispatchClick}>Dispatch Action</button>
             </div>
         );
     }
 }
 
-// Product.propTypes = {
-// };
+Product.propTypes = {
+    ProductActionsCreator: PropTypes.object.isRequired
+};
+
+export default connect(
+    (state) => {
+        return {action: state.ProductReducer.action};
+    },
+    (dispatch) => {
+        return {
+            ProductActionsCreator: bindActionCreators(ProductRedux.ProductActionsCreator, dispatch)
+        };
+    }
+)(Product);
