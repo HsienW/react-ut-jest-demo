@@ -15,7 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "@types/gapi.client": "^1.0.1",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "gapi-client": "0.0.3",
     "history": "^4.7.2",
     "prop-types": "^15.6.2",
